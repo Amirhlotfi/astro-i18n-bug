@@ -1,0 +1,41 @@
+---
+import ServerSideComponent from '../components/ServerSideComponent.astro'
+import ServerIsland from "../components/ServerIsland.astro";
+
+const projectTitle = {
+	en: 'Astro project in English',
+	es: 'Proyecto Astro en Español',
+	fr: 'Projet Astro en Français',
+}
+
+const languages = Astro.currentLocale
+
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+		<h1>{projectTitle[languages]}</h1>
+		<ServerSideComponent />
+		<ServerIsland server:defer>
+			<div>Loading...</div>
+		</ServerIsland >
+		<ul>
+			<li>
+				<a href="">English</a>
+			</li>
+			<li>
+				<a href="/es">Español</a>
+			</li>
+			<li>
+				<a href="/fr">Français</a>
+			</li>
+		</ul>
+	</body>
+</html>

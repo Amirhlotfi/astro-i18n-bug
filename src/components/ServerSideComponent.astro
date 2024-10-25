@@ -1,0 +1,11 @@
+---
+const text = {
+    en: "This is a server side component",
+    es: "Este es un componente del lado del servidor",
+    fr: "Ceci est un composant côté serveur",
+}
+
+const language = Astro.currentLocale
+---
+
+<h2>{text[language]}</h2>

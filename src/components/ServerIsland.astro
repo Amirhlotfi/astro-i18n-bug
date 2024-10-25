@@ -1,0 +1,11 @@
+---
+const text = {
+    en: "This is a server island",
+    es: "Esta es una server island",
+    fr: "C'est une server island",
+}
+
+const language = Astro.currentLocale
+---
+
+<h2>{text[language]}</h2>
